@@ -5,7 +5,7 @@ from django.http import JsonResponse
 async def http_call_async():
   async with httpx.AsyncClient() as client:
     response = await client.get(url='https://fake-api-tau.vercel.app/api/efood/restaurantes')
-    restaurant_list = [restaurant for restaurant in response.json()]
+    restaurant_list =  response.json()
 
     for restaurant in restaurant_list:
       await asyncio.sleep(1)
